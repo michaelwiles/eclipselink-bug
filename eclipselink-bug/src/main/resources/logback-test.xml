@@ -1,0 +1,29 @@
+<configuration>
+
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<!-- encoders are assigned the type ch.qos.logback.classic.encoder.PatternLayoutEncoder by default -->
+        <encoder>
+			<!-- <pattern>%d %highlight(%-5level) [%thread] %logger{10} %-5level - %msg%n</pattern> -->
+            <pattern>%d %-5level [%thread] %logger{10} %-5level - %msg%n</pattern>
+
+        </encoder>
+    </appender>
+
+<!-- -     <logger name="org" level="INFO" /> -->
+<!--     <logger name="com.afrozaar" level="DEBUG" />-->
+
+<!--      <logger name="com.jolbox" level="DEBUG" /> 
+    <logger name="com.jolbox.bonecp.PreparedStatementHandle " level="INFO" />  -->
+    <!-- <logger name="org.springframework.context.support" level="TRACE" /> -->
+	<!-- <logger name="com.jolbox" level="INFO" /> <logger name="com.afrozaar" level="DEBUG" /> <logger name="org.springframework" level="INFO" 
+		/> <logger name="com.afrozaar.ashes.core.SimpleTest" level="INFO" /> <logger name="org.apache.http" level="INFO" /> <logger name="openjpa.Runtime" 
+		level="INFO" /> <logger name="org.springframework.web.client.RestTemplate" level="ERROR" /> -->
+
+    <!-- <logger name="com.google.code.ssm" level="INFO"/> -->
+
+    <root level="DEBUG">
+        <appender-ref ref="STDOUT" />
+    </root>
+</configuration>
+
+
