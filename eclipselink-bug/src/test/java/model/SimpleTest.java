@@ -23,6 +23,15 @@ public class SimpleTest {
     EntityManager em;
 
     @Test
+    public void TestLookupWithMoreOneEnumInTheFilter() {
+        System.out.println(repository.findAll());
+        Surname surname = new Surname();
+        em.persist(surname);
+        repository.findByPersonTypeInAndSurname(Lists.newArrayList(PersonType.MALE), surname);
+        //return titleRepository.findByStatusInAndTenant(statusList, tenant);
+    }
+
+    @Test
     public void TestLookupWithMoreThanOneEnumInTheFilter() {
         System.out.println(repository.findAll());
         Surname surname = new Surname();
