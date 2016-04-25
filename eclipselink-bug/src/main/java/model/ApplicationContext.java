@@ -52,15 +52,15 @@ public class ApplicationContext {
     }
 
     /**
-     * <bean id="mysqlHikariDataSource"
-     * class="com.zaxxer.hikari.HikariDataSource"> <constructor-arg> <bean
-     * class="com.zaxxer.hikari.HikariConfig"> <property name="driverClassName"
-     * value="com.mysql.jdbc.Driver" /> <property name="username"
-     * value="${db.username}" /> <property name="password"
-     * value="${db.password}" /> <property name="jdbcUrl" value="${db.url}" />
-     * <property name="maximumPoolSize" value="25" /> <property name="poolName"
-     * value="${poolName}" /> <property name="transactionIsolation"
-     * value="${transactionIsolationLevelString}" /> </bean> </constructor-arg>
+     * <bean id="mysqlHikariDataSource" class=
+     * "com.zaxxer.hikari.HikariDataSource"> <constructor-arg> <bean class=
+     * "com.zaxxer.hikari.HikariConfig"> <property name="driverClassName" value=
+     * "com.mysql.jdbc.Driver" /> <property name="username" value=
+     * "${db.username}" /> <property name="password" value="${db.password}" />
+     * <property name="jdbcUrl" value="${db.url}" /> <property name=
+     * "maximumPoolSize" value="25" /> <property name="poolName" value=
+     * "${poolName}" /> <property name="transactionIsolation" value=
+     * "${transactionIsolationLevelString}" /> </bean> </constructor-arg>
      * </bean>
      */
     @Bean(name = "dataSource")
@@ -101,6 +101,11 @@ public class ApplicationContext {
         jpaProperties.put("eclipselink.ddl-generation.output-mode", "database");
         //jpaProperties.put("eclipselink.target-database", "HSQL");
         jpaProperties.put("eclipselink.target-database", "MYSQL");
+
+        jpaProperties.put("eclipselink.logging.level", "FINE");
+        jpaProperties.put("eclipselink.logging.parameters", "true");
+        jpaProperties.put("eclipselink.logging.timestamp", "false");
+        jpaProperties.put("eclipselink.logging.logger", "model.Slf4jSessionLogger");
         entityManagerFactoryBean.setJpaProperties(jpaProperties);
 
         return entityManagerFactoryBean;

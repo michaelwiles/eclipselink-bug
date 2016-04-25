@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface PersonRepository extends JpaRepository<PersonWithType, Long> {
 
-    public List<PersonWithType> findByPersonTypeIn(List<PersonType> types);
+    //public List<PersonWithType> findByPersonTypeIn(List<PersonType> types);
 
     public void findByPersonTypeInAndSurname(List<PersonType> list, Surname surname);
 }
